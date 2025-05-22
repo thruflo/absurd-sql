@@ -15,7 +15,7 @@ function getConfig(name, entry, html) {
     entry,
     mode: 'development',
     resolve: {
-      extensions: ['.dev.js', '.js', '.json', '.wasm'],
+      extensions: ['.dev.js', '.js', '.json', '.wasm', '.vue'],
       fallback: {
         crypto: false,
         path: false,
@@ -29,8 +29,12 @@ function getConfig(name, entry, html) {
     module: {
       rules: [
         {
-          test: /\/worker\.js$/,
+          test: /\\/worker\\.js$/,
           use: { loader: 'worker-loader' }
+        },
+        {
+          test: /\\.vue$/,
+          use: 'vue-loader'
         }
       ]
     }
@@ -39,5 +43,6 @@ function getConfig(name, entry, html) {
 
 module.exports = [
   getConfig('bench', './bench/main.js', './bench/index.html'),
-  getConfig('fts', './fts/main.js', './fts/index.html')
+  getConfig('fts', './fts/main.js', './fts/index.html'),
+  getConfig('vue', './vue/main.js', './vue/index.html')
 ];

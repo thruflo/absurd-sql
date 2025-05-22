@@ -1,4 +1,3 @@
-
 This is an absurd project.
 
 It implements a backend for [sql.js](https://github.com/sql-js/sql.js/) (sqlite3 compiled for the web) that treats IndexedDB like a disk and stores data in blocks there. That means your sqlite3 database is persisted. And not in the terrible way of reading and writing the whole image at once -- it reads and writes your db in small chunks.
@@ -10,6 +9,25 @@ It basically stores a whole database into another database. Which is absurd.
 You should also read [this blog post](https://jlongster.com/future-sql-web) which explains the project in great detail.
 
 If you like my work, feel free to [buy me a coffee!](https://www.buymeacoffee.com/jlongster)
+
+## Examples
+
+The repository includes several examples:
+
+- **Benchmark**: Performance tests comparing Absurd-SQL with raw IndexedDB
+- **Full-Text Search**: Demonstrates SQLite's FTS capabilities
+- **Vue.js Notes App**: A simple notes application built with Vue.js that demonstrates how to use Absurd-SQL in a modern frontend framework
+
+To run the examples:
+
+```
+yarn serve
+```
+
+Then navigate to:
+- Benchmark: http://localhost:8080/
+- FTS: http://localhost:8080/fts.html
+- Vue Notes App: http://localhost:8080/vue.html
 
 ## How do I use it?
 
